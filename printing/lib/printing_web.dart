@@ -382,8 +382,7 @@ class _WebPdfRaster extends PdfRaster {
 
   @override
   Uint8List get pixels {
-    _pixels ??= PdfRasterBase.fromPng(png).pixels;
-    return _pixels!;
+    return Uint8List.fromList([]);
   }
 
   @override

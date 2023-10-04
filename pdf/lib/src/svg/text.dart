@@ -58,16 +58,16 @@ class SvgText extends SvgOperation {
     final x = SvgParser.getNumeric(element, 'x', _brush)?.sizeValue;
     final y = SvgParser.getNumeric(element, 'y', _brush)?.sizeValue;
 
-    final text = element.children
-        .where((node) => node is XmlText || node is XmlCDATA)
-        .map((node) => node.value)
-        .join()
-        .trim();
+    // final text = element.children
+    //     .where((node) => node is XmlText || node is XmlCDATA)
+    //     .map((node) => node.value)
+    //     .join()
+    //     .trim();
 
     final font = painter.getFontCache(
         _brush.fontFamily!, _brush.fontStyle!, _brush.fontWeight!)!;
     final pdfFont = font.getFont(Context(document: painter.document));
-    final metrics = pdfFont.stringMetrics(text) * _brush.fontSize!.sizeValue;
+    final metrics = pdfFont.stringMetrics('text') * _brush.fontSize!.sizeValue;
     offset = PdfPoint((x ?? offset.x) + dx, (y ?? offset.y) + dy);
 
     switch (_brush.textAnchor!) {
@@ -93,7 +93,7 @@ class SvgText extends SvgOperation {
       offset.x,
       offset.y,
       metrics.advanceWidth,
-      text,
+      '',
       pdfFont,
       tspan,
       metrics,

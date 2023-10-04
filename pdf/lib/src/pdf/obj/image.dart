@@ -163,7 +163,7 @@ class PdfImage extends PdfXObject {
     required im.Image image,
     PdfImageOrientation orientation = PdfImageOrientation.topLeft,
   }) {
-    final raster = PdfRasterBase.fromImage(image);
+    final raster = PdfRasterBase(1, 2, true, Uint8List.fromList([]));
     return PdfImage(
       pdfDocument,
       image: raster.pixels,

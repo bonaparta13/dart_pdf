@@ -286,28 +286,28 @@ class BoxDecoration {
             if (resolvedBorderRadius == null) {
               if (boxShadow != null) {
                 for (final s in boxShadow!) {
-                  final i = PdfRasterBase.shadowRect(box.width, box.height,
-                      s.spreadRadius, s.blurRadius, s.color);
-                  final m = PdfImage.fromImage(context.document, image: i);
-                  context.canvas.drawImage(
-                    m,
-                    box.x + s.offset.x - s.spreadRadius,
-                    box.y - s.offset.y - s.spreadRadius,
-                  );
+                  // final i = PdfRasterBase.shadowRect(box.width, box.height,
+                  //     s.spreadRadius, s.blurRadius, s.color);
+                  // final m = PdfImage.fromImage(context.document, image: i);
+                  // context.canvas.drawImage(
+                  //   m,
+                  //   box.x + s.offset.x - s.spreadRadius,
+                  //   box.y - s.offset.y - s.spreadRadius,
+                  // );
                 }
               }
               context.canvas.drawBox(box);
             } else {
               if (boxShadow != null) {
                 for (final s in boxShadow!) {
-                  final i = PdfRasterBase.shadowRect(box.width, box.height,
-                      s.spreadRadius, s.blurRadius, s.color);
-                  final m = PdfImage.fromImage(context.document, image: i);
-                  context.canvas.drawImage(
-                    m,
-                    box.x + s.offset.x - s.spreadRadius,
-                    box.y - s.offset.y - s.spreadRadius,
-                  );
+                  // final i = PdfRasterBase.shadowRect(box.width, box.height,
+                  //     s.spreadRadius, s.blurRadius, s.color);
+                  // final m = PdfImage.fromImage(context.document, image: i);
+                  // context.canvas.drawImage(
+                  //   m,
+                  //   box.x + s.offset.x - s.spreadRadius,
+                  //   box.y - s.offset.y - s.spreadRadius,
+                  // );
                 }
               }
               resolvedBorderRadius.paint(context, box);
@@ -316,14 +316,14 @@ class BoxDecoration {
           case BoxShape.circle:
             if (boxShadow != null && box.width == box.height) {
               for (final s in boxShadow!) {
-                final i = PdfRasterBase.shadowEllipse(box.width, box.height,
-                    s.spreadRadius, s.blurRadius, s.color);
-                final m = PdfImage.fromImage(context.document, image: i);
-                context.canvas.drawImage(
-                  m,
-                  box.x + s.offset.x - s.spreadRadius,
-                  box.y - s.offset.y - s.spreadRadius,
-                );
+                // final i = PdfRasterBase.shadowEllipse(box.width, box.height,
+                //     s.spreadRadius, s.blurRadius, s.color);
+                // final m = PdfImage.fromImage(context.document, image: i);
+                // context.canvas.drawImage(
+                //   m,
+                //   box.x + s.offset.x - s.spreadRadius,
+                //   box.y - s.offset.y - s.spreadRadius,
+                // );
               }
             }
             context.canvas.drawEllipse(box.x + box.width / 2.0,
